@@ -16,8 +16,8 @@
     NSString* fileTitle = [command.arguments objectAtIndex:1];
     if (url != nil && [url length] > 0) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            // NSURL *fileURL = [NSURL URLWithString:url];
-            NSURL *fileURL = [NSURL fileURLWithPath:[url stringByReplacingOccurrencesOfString:@"file://" withString:@""]];
+            NSURL *fileURL = [NSURL URLWithString:url];
+            // NSURL *fileURL = [NSURL fileURLWithPath:[url stringByReplacingOccurrencesOfString:@"file://" withString:@""]];
             if (fileURL) {
                 pdfviewerViewController = [[UIStoryboard storyboardWithName:@"PDFViewerViewController" bundle:nil] instantiateViewControllerWithIdentifier:@"PDFViewer"];
                 UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:pdfviewerViewController];
